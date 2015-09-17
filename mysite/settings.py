@@ -29,16 +29,19 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+STATICFILES_STORAGE = "storages.backends.s3boto.S3BotoStorage"
+AWS_PRELOAD_METADATA = True
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'collectfast',
     'django.contrib.staticfiles',
     #'polls',
     'blog',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -103,3 +106,4 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+
