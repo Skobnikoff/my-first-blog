@@ -5,18 +5,15 @@
         <title>Home Page</title>
     </head>
     <body>
-    <h1>=== MY FIRST WEB SITE ===</h1>
-    <h2>HOME PAGE</h2>
-    <ul>
-        <li><h1>h1</h1></li>
-        <li><h2>h2</h2></li>
-        <li><em>em</em></li>
-        <li><strong>strong</strong></li>
-        <li>br</li><br />
-        <li><a href="http://skobnikoff.pythonanywhere.com/">a href="http://skobnikoff.pythonanywhere.com/"</a></li>
-        <li>div</li>
-        <div></div>
+    <h1>HOME PAGE</h1>
 
-    </ul>
+    {% for post in posts %}
+        <div>
+            <h2><a href="">{{post.title}}</a></h2>
+            <em>published: {{post.published_date}}</em>
+            <p>{{post.text|linebreaks}}</p>
+        </div>
+
+    {% endfor %}
     </body>
 </html>
